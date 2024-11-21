@@ -1,1 +1,1 @@
-# Project _emerald_
+# Project \_emerald\_
