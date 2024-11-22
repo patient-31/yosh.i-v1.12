@@ -8,7 +8,7 @@
 
 # include "../includes/_emerald_.h"
 
-void cleanup(t_program *c)
+void	cleanup(t_program *c)
 {
-    free(c);
+	free(c);
 }

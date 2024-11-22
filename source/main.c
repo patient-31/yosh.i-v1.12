@@ -8,26 +8,29 @@
 
 # include "../includes/_emerald_.h"
 
-int main (int argc, char **argv, char **env)
+int	main(int argc, char **argv, char **env)
 {
-    (void)env;
-    (void)argv;
-    (void)argc;
+	(void)env;
+	(void)argv;
+	(void)argc;
 
-    t_program *c;
-    c = malloc(sizeof(t_program));
+	t_program *c;
+	c = malloc(sizeof(t_program));
     
-    if (!c) {
-        fprintf(stderr, "Memory Allocation Failed");
-        return (1);
-    }
-    c->prompt = "> ";
-    char *line_read;
-    while (1)
-    {
-        line_read = readline(c->prompt);
-        printf("%s", line_read);
-        break ;
-    }
-    cleanup(c);
+	if (!c) {
+		fprintf(stderr, "Memory Allocation Failed");
+		return (1);
+	}
+
+
+	c->username = getenv("USER");
+	c->prompt = strjoin_e(2, c->username, " >");
+	
+	char *line_read;
+	while (1)
+	{
+		line_read = readline(c->prompt);
+		printf("%s", line_read);
+	}
+	cleanup(c);
 }

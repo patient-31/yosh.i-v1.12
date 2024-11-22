@@ -11,4 +11,6 @@
 typedef struct s_emerald
 {
     char    *prompt;
+	char	*username;
+	char	hostname[256];
 } t_program;

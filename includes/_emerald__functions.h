@@ -8,4 +8,11 @@
 
 #pragma once
 
-void    cleanup(t_program *c);
+
+// FREE_C
+void	cleanup(t_program *c);
+
+// STRJOIN_E_C
+unsigned int	ft_strlen(char *s);
+void			*malloc_strlen_n(unsigned int c, va_list arg);
+char			*strjoin_e(unsigned int c, ...);
