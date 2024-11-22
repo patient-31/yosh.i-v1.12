@@ -1,5 +1,5 @@
 # Define the target executable
-TARGET := emsh
+TARGET := yosh.i
 
 # Define the compiler and flags
 C_COMPILER := gcc

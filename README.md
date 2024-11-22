@@ -1,2 +1,3 @@
-# Project \_emerald\_
-    A shell in the making. "emsh"
+# Project yosh.i v2
+    A rewrite of yosh.i 1.11
+
