@@ -5,7 +5,7 @@ TARGET := yosh.i
 C_COMPILER := gcc
 LDFLAGS := -lreadline
 FLAGS := -Wextra -Werror -Wall
-ADDSAN := -fsanitize=address
+ADDSAN := -fsanitize=address -g
 
 # Define source and object directories
 SRC_DIR := source/

@@ -25,12 +25,12 @@ int	main(int argc, char **argv, char **envp)
 	if (argc == 1)
 	{
 		using_history();
-		load_history("emsh_history");
+		load_history("yosh_history");
 
 		t_program *c;
 		c = malloc(sizeof(t_program));
 		if (!c) {
-			error_exit("Memory Allocation for t_program struct", MEMORY_ALLOCATION_ERROR, c, cleanup);
+			error_exit("Memory Allocation for t_program", MEMORY_ALLOCATION_ERROR, c, cleanup);
 		}
 		set_variables(c, envp);
 		
@@ -39,7 +39,6 @@ int	main(int argc, char **argv, char **envp)
 		{
 			line_read = readline(c->prompt);
 			add_history(line_read);
-			save_history("emsh_history");
 			break ;
 		}
 		cleanup(c);

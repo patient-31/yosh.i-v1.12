@@ -21,7 +21,26 @@ void	mem_error_exit(const char *mess, t_program *c)
 	error_exit(mess, MEMORY_ALLOCATION_ERROR, c, cleanup);
 }
 
+void	free_2d_list(char **f)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (f[i])
+	{
+		if (f[i])
+			free(f[i++]);
+	}
+	if (f)
+		free(f);
+}
+
 void	cleanup(t_program *c)
 {
+	save_history("yosh_history");
+	if (c->prompt)
+		free(c->prompt);
+	if (c->env_c)
+		free_2d_list(c->env_c);
 	free(c);
 }

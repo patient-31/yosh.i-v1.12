@@ -10,6 +10,7 @@
 
 
 // FREE_C
+void			free_2d_list(char **f);
 void			cleanup(t_program *c);
 void			error_exit(const char *mess, int error_type, t_program *c, p_cleanup_function cleanup);
 void			mem_error_exit(const char *mess, t_program *c);
@@ -20,7 +21,7 @@ void			save_history(const char *emsh_history);
 
 // PRINT_C
 void			print_list_2d(char **list);
-unsigned int	dc_lstlen(char **list);
+unsigned int	lstlen(char **list);
 char			**tabdup(char **t1);
 
 // STRJOIN_E_C
