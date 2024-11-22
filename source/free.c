@@ -8,6 +8,19 @@
 
 # include "../includes/_emerald_.h"
 
+void	error_exit(const char *mess, int error_type, t_program *c, p_cleanup_function cleanup)
+{
+	fprintf(stderr, "\e[1;31mError; Explicit: %s\n", mess);
+	cleanup(c);
+	fprintf(stderr, "Program has exited with an error code <%d>\e[0m\n", error_type);
+	exit(error_type);
+}
+
+void	mem_error_exit(const char *mess, t_program *c)
+{
+	error_exit(mess, MEMORY_ALLOCATION_ERROR, c, cleanup);
+}
+
 void	cleanup(t_program *c)
 {
 	free(c);

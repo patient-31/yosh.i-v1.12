@@ -8,9 +8,14 @@
 
 #pragma once
 
+typedef	void					t_cleanup_function;
+
 typedef struct s_emerald
 {
     char    *prompt;
 	char	*username;
 	char	hostname[256];
+	char	**env_c;
 } t_program;
+
+typedef	void		(*p_cleanup_function)(t_program *);

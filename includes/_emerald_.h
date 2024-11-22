@@ -8,12 +8,15 @@
 
 #pragma once
 
+# define MEMORY_ALLOCATION_ERROR 12
+
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <string.h>
 # include <stdbool.h>
 # include <stdarg.h>
+# include <fcntl.h>
 # include <readline/readline.h>
 # include <readline/history.h>
 
