@@ -2,10 +2,11 @@
 TARGET := yosh.i
 
 # Define the compiler and flags
-C_COMPILER := gcc
-LDFLAGS := -lreadline
-FLAGS := -Wextra -Werror -Wall
-ADDSAN := -fsanitize=address -g
+C_COMPILER 			:= gcc
+LDFLAGS 			:= -lreadline -L/opt/homebrew/Cellar/readline/8.2.13/lib # alter this path if on linux
+INCLUDE_PATH_RL	   	:= -I/opt/homebrew/Cellar/readline/8.2.13/include # alter this path if on linux
+FLAGS 				:= -Wextra -Werror -Wall
+ADDSAN 				:= -fsanitize=address -g
 
 # Define source and object directories
 SRC_DIR := source/
@@ -18,7 +19,7 @@ SOURCE := $(wildcard $(SRC_DIR)*.c)
 OBJECTS := $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SOURCE))
 
 # Linking command
-LINK := $(C_COMPILER) $(FLAGS) $(ADDSAN) -o $(TARGET) $(OBJECTS) $(CFLAGS) $(LDFLAGS)
+LINK := $(C_COMPILER) $(FLAGS) $(ADDSAN) -o $(TARGET) $(OBJECTS) $(CFLAGS) $(LDFLAGS) $(INCLUDE_PATH_RL)
 
 
 test: all

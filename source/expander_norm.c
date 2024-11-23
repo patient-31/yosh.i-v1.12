@@ -1,6 +1,6 @@
 /*
  * ________________________________________________________________________________
- * |  File: history.c
+ * |  File: expander_norm.c
  * |  Project: source
  * |  File Created: Wednesday, 20th November 2024 10:47 am
  * |  Author: Daniel Haddington [haddingtondaniel5@icloud.com]
@@ -8,14 +8,11 @@
 
 #include "../includes/yosh_i.h"
 
-void	load_history(t_cmd *cmd)
+char	*norm_act(char *cmp, char *s, int index, t_cmd *c)
 {
-	if (read_history(cmd->yosh_history) != 0)
-		printf("Unable to load history file\n");
-}
-
-void	save_history(t_cmd *cmd)
-{
-	if (write_history(cmd->yosh_history) != 0)
-		printf("Unable to save history file\n");
+	if (c->n->act)
+		c->n->act = append_exist(cmp, s, index, c);
+	if (c->n->act == NULL)
+		c->n->act = append_init(cmp, s, index);
+	return (c->n->act);
 }
