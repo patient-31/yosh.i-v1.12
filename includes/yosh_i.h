@@ -22,5 +22,5 @@
 
 
 
-# include "_emerald__types.h"
-# include "_emerald__functions.h"
+# include "yosh_i_types.h"
+# include "yosh_i_functions.h"

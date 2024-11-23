@@ -6,7 +6,7 @@
  * |  Author: Daniel Haddington [haddingtondaniel5@icloud.com]
  */
 
-# include "../includes/_emerald_.h"
+# include "../includes/yosh_i.h"
 
 void	set_variables(t_program *c, char **envp)
 {

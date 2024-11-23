@@ -6,7 +6,7 @@
  * |  Author: Daniel Haddington [haddingtondaniel5@icloud.com]
  */
 
-# include "../includes/_emerald_.h"
+# include "../includes/yosh_i.h"
 
 void	error_exit(const char *mess, int error_type, t_program *c, p_cleanup_function cleanup)
 {
