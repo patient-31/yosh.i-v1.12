@@ -37,7 +37,6 @@ void	free_2d_list(char **f)
 
 void	cleanup(t_program *c)
 {
-	save_history("yosh_history");
 	if (c->prompt)
 		free(c->prompt);
 	if (c->env_c)

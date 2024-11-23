@@ -34,14 +34,36 @@ int	main(int argc, char **argv, char **envp)
 		}
 		set_variables(c, envp);
 		
-		char *line_read;
+		char *input;
 		while (1)
 		{
-			line_read = readline(c->prompt);
-			add_history(line_read);
-			break ;
+			input = readline(c->prompt);
+			if (input == NULL)
+			{
+				printf("\nThanks from the developer of yosh.i v2.0!");
+				cleanup(c);
+				exit(0);
+			}
+			if (is_whitespace(input))
+			{
+				free(input);
+				continue ;
+			}	
+			add_history(input);
+
+
+			char *command = strtok(input, ";");
+			while (command)
+			{
+				printf("command: %s\n", command);
+				if (!process(command, c))
+					break ;
+				command = strtok(NULL, ";");
+			}
+			save_history("yosh_history");
+			free(input);
 		}
 		cleanup(c);
 	}
-
 }
+

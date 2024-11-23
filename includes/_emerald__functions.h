@@ -24,7 +24,7 @@ void			print_list_2d(char **list);
 unsigned int	lstlen(char **list);
 char			**tabdup(char **t1);
 
-// STRJOIN_E_C
-unsigned int	ft_strlen(char *s);
+// UTILS_C
+bool			is_whitespace(char *s);
 void			*malloc_strlen_n(unsigned int c, va_list arg);
 char			*strjoin_e(unsigned int c, ...);

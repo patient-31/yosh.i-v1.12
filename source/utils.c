@@ -1,21 +1,31 @@
 /*
  * ________________________________________________________________________________
- * |  File: strjoin_e.c
+ * |  File: utils.c
  * |  Project: source
- * |  File Created: Saturday, 23rd November 2024 01:37 am
+ * |  File Created: Saturday, 23rd November 2024 07:33 am
  * |  Author: Daniel Haddington [haddingtondaniel5@icloud.com]
  */
 
+
 # include "../includes/_emerald_.h"
 
-unsigned int	ft_strlen(char *s)
+bool	is_whitespace(char *s)
 {
-	unsigned int i;
+	int	i;
+	int	len;
 
+	len = strlen(s);
 	i = 0;
 	while (s[i])
-		i++;
-	return (i);
+	{
+		if (i != len)
+		{
+			if (s[i] != ' ')
+				return (false);
+			i++;
+		}
+	}
+	return (true);
 }
 
 void	*malloc_strlen_n(unsigned int c, va_list arg)
@@ -27,7 +37,7 @@ void	*malloc_strlen_n(unsigned int c, va_list arg)
 	size = 0; 
 	while (c)
 	{
-		size += ft_strlen(va_arg(arg_copy, char *));
+		size += strlen(va_arg(arg_copy, char *));
 		c--;
 	}
 	va_end(arg_copy);
