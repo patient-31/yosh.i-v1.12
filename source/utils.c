@@ -6,7 +6,6 @@
  * |  Author: Daniel Haddington [haddingtondaniel5@icloud.com]
  */
 
-
 # include "../includes/yosh_i.h"
 
 bool	is_whitespace(char *s)

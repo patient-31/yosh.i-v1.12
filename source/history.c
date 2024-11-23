@@ -9,14 +9,14 @@
 
 #include "../includes/yosh_i.h"
 
-void	load_history(const char *emsh_history)
+void	load_history(const char *yosh_history)
 {
-	if (read_history(emsh_history) != 0)
+	if (read_history(yosh_history) != 0)
 		printf("Unable to load history file\n");
 }
 
-void	save_history(const char *emsh_history)
+void	save_history(const char *yosh_history)
 {
-	if (write_history(emsh_history) != 0)
+	if (write_history(yosh_history) != 0)
 		printf("Unable to save history file\n");
 }
