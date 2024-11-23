@@ -55,7 +55,6 @@ int	main(int argc, char **argv, char **envp)
 			char *command = strtok(input, ";");
 			while (command)
 			{
-				printf("command: %s\n", command);
 				if (!process(command, c))
 					break ;
 				command = strtok(NULL, ";");

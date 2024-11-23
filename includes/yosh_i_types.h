@@ -12,6 +12,7 @@ typedef	void					t_cleanup_function;
 
 typedef struct s_emerald
 {
+	char	**tokens;
     char    *prompt;
 	char	*username;
 	char	hostname[256];
