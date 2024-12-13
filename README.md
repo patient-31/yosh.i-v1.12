@@ -13,3 +13,6 @@
 	Makefile currently targets the brew version of readline on MacOS 15.
 
 	Executable should just run on its own, aarch64 MacOS 15
+
+	Pipes dont work as well as they should, i can run ``` output | cat -e ```
+	if the program is on path, as opposed to within the directory where i might run ```./output | cat -e``` this does not work, with or without the ```./```
